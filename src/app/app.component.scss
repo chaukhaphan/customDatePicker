@@ -1,0 +1,110 @@
+::ng-deep {
+  /* Use display: grid so we can position the range menu to the left of the existing calendar elements */
+  .flatpickr-calendar.flatpickr-has-predefined-ranges {
+    width: auto;
+    min-width: 200px;
+    display: grid;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+  .custom-date-filter .input-button {
+    display: flex;
+    text-align: center;
+    right: 5px !important;
+    .material-symbols-outlined {
+      font-size: 20px;
+    }
+  }
+
+  app-custom-date-range-picker {
+    width: 100%;
+  }
+  .flatpickr-input {
+    padding-right: 25px;
+  }
+  .flatpickr-input + .form-control.input {
+    height: 24px;
+  }
+
+  .flatpickr-calendar:not(.arrowTop) {
+    display: none;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges .flatpickr-predefined-ranges {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges:not(.flatpickr-predefined-ranges-only)
+    .flatpickr-predefined-ranges {
+    border-right: 1px solid #e6e6e6;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges .flatpickr-months {
+    position: relative; /* needed for prev/next month arrows to position correctly */
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges .flatpickr-innerContainer {
+    overflow: visible;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* hide the calendar when .flatpickr-predefined-ranges-only is added to the container */
+  .flatpickr-calendar.flatpickr-has-predefined-ranges.flatpickr-predefined-ranges-only .flatpickr-months {
+    display: none;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges.flatpickr-predefined-ranges-only .flatpickr-innerContainer {
+    display: none;
+  }
+
+  /* style the button nav items to match the calendar */
+  .flatpickr-calendar.flatpickr-has-predefined-ranges .flatpickr-predefined-ranges .nav-link.btn-link {
+    padding: 0.25rem 0.75rem;
+    color: inherit;
+    border-radius: 0;
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges .flatpickr-predefined-ranges .nav-link.btn-link.active {
+    background: #569ff7;
+    color: #fff;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges
+    .flatpickr-predefined-ranges
+    .nav-link.btn-link:hover:not(.active) {
+    background: #eee;
+  }
+
+  /* needed so the hover/active background on the buttons don't overlap the container's border radius */
+  .flatpickr-calendar.flatpickr-has-predefined-ranges .flatpickr-predefined-ranges :first-child .nav-link.btn-link {
+    border-radius: 5px 0 0 0;
+    width: 100%;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges .flatpickr-predefined-ranges :last-child .nav-link.btn-link {
+    margin-bottom: 0.5rem;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges.flatpickr-predefined-ranges-only
+    .flatpickr-predefined-ranges
+    :first-child
+    .nav-link.btn-link {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .flatpickr-calendar.flatpickr-has-predefined-ranges.flatpickr-predefined-ranges-only
+    .flatpickr-predefined-ranges
+    :last-child
+    .nav-link.btn-link {
+    margin-bottom: 0;
+    border-radius: 0 0 5px 5px;
+  }
+}
